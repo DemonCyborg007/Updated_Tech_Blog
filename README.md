@@ -1,6 +1,7 @@
 # Updated_Tech_Blog
 Django project
-UPDATIONS:
+
+    UPDATIONS:
     1. Added 3 New Features to model: author,created_at,updated_at
     2. Shown all above data in Home Page
     3. Updated Time automatically updates when updations take place
@@ -9,8 +10,7 @@ UPDATIONS:
     6. Users can only access and update their own data in dashboard 
     7. But SuperUser can accesss data of all users from dashboard
 
-
-USER DETAILS:
+    USER DETAILS:
     SuperUser
         User: MR
         Pass: mr@12345
