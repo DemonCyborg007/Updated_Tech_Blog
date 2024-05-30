@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load tz %}
+{% load custom_filters%}
+{% load static %}
+{% block title %}TECH BLOG{% endblock title %}
+{% block content %}
+<div class="col-sm-10">
+    <h1 class="text-center alert alert-primary">TECH BLOG HOME PAGE</h1>
+    {% if blogs %}
+    {% for blog in blogs %}
+    <div class= "jumbotron jumbotron-fluid jumbo-color">
+        <div class="container">
+            <h2 class="display-3 font-weight-bold">{{ blog.title }}</h2>
+            <p class="lead text-dark">{{ blog.cont }}</p>
+            <p class="lead text-dark">Created by: {{ blog.author.get_full_name }}</p>
+            <p class="lead text-dark">Created on: {{ blog.created_at|timezone:"Asia/Kolkata" }}</p>
+            {% if blog|is_updated %}
+            <p class="lead text-dark">Updated on: {{ blog.updated_at|timezone:"Asia/Kolkata" }}</p>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+        <h4 class="text-center alert alert-warning">NO Records!</h4>
+    {% endif %}
+</div>
+{% endblock content %}
